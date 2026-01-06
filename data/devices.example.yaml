@@ -1,0 +1,29 @@
+# Device metadata for Ruuvi sensors
+# Copy to devices.yaml and edit with your settings
+# Devices are also auto-registered when first seen via any data source
+
+# Global context for all sensors (optional)
+# Helps the MCP client understand your environment
+site: "Home in the tropics. Hot and humid climate."
+
+# Individual device configurations
+devices:
+  # Ruuvi Air sensor example
+  - mac: AA:BB:CC:DD:EE:01
+    type: air
+    nickname: office
+    description: "Office sensor on my desk"
+    # ble_uuid: optional, for direct BLE sync on macOS
+
+  # RuuviTag example
+  - mac: AA:BB:CC:DD:EE:02
+    type: tag
+    nickname: bedroom
+    description: "Bedroom sensor near the window"
+
+# Notes:
+# - mac: Device MAC address (required)
+# - type: "air" for Ruuvi Air, "tag" for RuuviTag (auto-detected from data format)
+# - nickname: Short name used in queries and output
+# - description: Context about sensor location/purpose (shown to MCP client)
+# - ble_uuid: BLE identifier for direct Bluetooth sync (macOS uses UUIDs)

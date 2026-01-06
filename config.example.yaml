@@ -1,0 +1,30 @@
+# Ruuvi MCP Server Configuration
+# Copy to config.yaml and edit with your settings
+
+# Ruuvi Gateway (for live collection via 'gateway poll')
+gateway:
+  url: http://ruuvigatewayXXXX.local  # Your gateway hostname or IP
+  token: your-bearer-token            # From Gateway > Cloud Options > Custom Server
+  poll_interval: 1                    # Seconds between polls
+
+# MQTT (alternative to gateway polling, use 'mqtt listen')
+mqtt:
+  broker: localhost
+  port: 1883
+  topic: ruuvi/#
+  # username: optional
+  # password: optional
+  # client_id: ruuvi-advisor
+
+# Ruuvi Cloud (for historical sync via 'cloud sync')
+# Authenticate first with: ruuvi-cli cloud auth
+cloud:
+  email: your@email.com
+  token: your-cloud-bearer-token
+
+# Local storage
+storage:
+  path: data/readings.db
+
+# Device metadata is stored separately in data/devices.yaml
+# See devices.example.yaml for the format
